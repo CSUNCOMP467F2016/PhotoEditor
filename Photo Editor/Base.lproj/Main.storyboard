@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Photo_Editor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Editor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNC-gH-Y8P">
+                                <rect key="frame" x="121" y="45" width="134" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Slm-pW-Pp0">
+                                <rect key="frame" x="140" y="578" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.065239622383630097" green="0.064901593252108689" blue="0.065577651515151492" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="fK8-9w-6XN"/>
+                                </constraints>
+                                <state key="normal" title="Select">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="selectPic" destination="BYZ-38-t0r" eventType="touchUpInside" id="snV-Rt-70K"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" translatesAutoresizingMaskIntoConstraints="NO" id="hgn-Ya-Y0o">
+                                <rect key="frame" x="55" y="133.5" width="265" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="dEH-ir-hcP"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OkQ-tq-ypS">
+                                <rect key="frame" x="139" y="617" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.065239622380000001" green="0.06490159325" blue="0.065577651520000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="FLa-eo-GmZ"/>
+                                </constraints>
+                                <state key="normal" title="Take Pic">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takepic" destination="BYZ-38-t0r" eventType="touchUpInside" id="ed6-fY-wre"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.69445654596870776" green="0.69085832552327398" blue="0.69805476641414144" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hgn-Ya-Y0o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5d4-9s-Fcn"/>
+                            <constraint firstItem="OkQ-tq-ypS" firstAttribute="top" secondItem="Slm-pW-Pp0" secondAttribute="bottom" constant="9" id="6u6-JD-yvz"/>
+                            <constraint firstItem="pNC-gH-Y8P" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="AjO-Np-psS"/>
+                            <constraint firstItem="Slm-pW-Pp0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="1" id="C5n-QY-mqe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OkQ-tq-ypS" secondAttribute="bottom" constant="20" id="CJw-We-agG"/>
+                            <constraint firstItem="OkQ-tq-ypS" firstAttribute="centerX" secondItem="Slm-pW-Pp0" secondAttribute="centerX" constant="-1" id="RyD-03-eQx"/>
+                            <constraint firstItem="hgn-Ya-Y0o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="55" id="SXS-zv-3pa"/>
+                            <constraint firstItem="pNC-gH-Y8P" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UOQ-Tb-oYA"/>
+                            <constraint firstItem="hgn-Ya-Y0o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Zkj-qX-4cO"/>
+                            <constraint firstAttribute="trailing" secondItem="hgn-Ya-Y0o" secondAttribute="trailing" constant="55" id="aPG-ec-PLH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="hgn-Ya-Y0o" id="BQU-dq-L0Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.19999999999999" y="138.0809595202399"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bird" width="1600" height="1200"/>
+    </resources>
+</document>
