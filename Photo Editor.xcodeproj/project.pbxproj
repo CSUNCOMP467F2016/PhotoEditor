@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB07CA201DCACDCE00A29211 /* ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB07CA1F1DCACDCE00A29211 /* ScaleImage.swift */; };
+		DB07CA231DCAD51800A29211 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB07CA221DCAD51800A29211 /* EditController.swift */; };
 		DB9CC4F01DB9CF0F00A63A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9CC4EF1DB9CF0F00A63A0B /* AppDelegate.swift */; };
 		DB9CC4F21DB9CF0F00A63A0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9CC4F11DB9CF0F00A63A0B /* ViewController.swift */; };
 		DB9CC4F51DB9CF0F00A63A0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9CC4F31DB9CF0F00A63A0B /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB07CA1F1DCACDCE00A29211 /* ScaleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScaleImage.swift; sourceTree = "<group>"; };
+		DB07CA221DCAD51800A29211 /* EditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
 		DB9CC4EC1DB9CF0F00A63A0B /* Photo Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9CC4EF1DB9CF0F00A63A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB9CC4F11DB9CF0F00A63A0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +41,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DB07CA1E1DCACCA300A29211 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				DB07CA1F1DCACDCE00A29211 /* ScaleImage.swift */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		DB07CA211DCAD4EF00A29211 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB9CC4F11DB9CF0F00A63A0B /* ViewController.swift */,
+				DB07CA221DCAD51800A29211 /* EditController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		DB9CC4E31DB9CF0F00A63A0B = {
 			isa = PBXGroup;
 			children = (
@@ -56,8 +77,9 @@
 		DB9CC4EE1DB9CF0F00A63A0B /* Photo Editor */ = {
 			isa = PBXGroup;
 			children = (
+				DB07CA211DCAD4EF00A29211 /* Controllers */,
+				DB07CA1E1DCACCA300A29211 /* Image */,
 				DB9CC4EF1DB9CF0F00A63A0B /* AppDelegate.swift */,
-				DB9CC4F11DB9CF0F00A63A0B /* ViewController.swift */,
 				DB9CC4F31DB9CF0F00A63A0B /* Main.storyboard */,
 				DB9CC4F91DB9CF0F00A63A0B /* Assets.xcassets */,
 				DB9CC4FB1DB9CF0F00A63A0B /* LaunchScreen.storyboard */,
@@ -140,8 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB07CA231DCAD51800A29211 /* EditController.swift in Sources */,
 				DB9CC4F21DB9CF0F00A63A0B /* ViewController.swift in Sources */,
 				DB9CC4F01DB9CF0F00A63A0B /* AppDelegate.swift in Sources */,
+				DB07CA201DCACDCE00A29211 /* ScaleImage.swift in Sources */,
 				DB9CC4F81DB9CF0F00A63A0B /* Photo_Editor.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +328,7 @@
 				DB9CC5031DB9CF0F00A63A0B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
