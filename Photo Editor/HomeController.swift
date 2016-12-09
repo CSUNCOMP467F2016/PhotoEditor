@@ -8,11 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class HomeController: UIViewController ,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var editButtonLabel: UILabel!
     
     let imagePicker = UIImagePickerController()
     
@@ -22,30 +21,34 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
 
     }
-
-    @IBAction func selectPic() {
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .photoLibrary
-        
-        present(imagePicker, animated: true, completion: nil)
+    
+    @IBAction func cameraButtonPressed(_ sender: Any) {
+        let cameraActionSheet = UIAlertController(title: "Pick an option below", message: "", preferredStyle: .actionSheet)
+        cameraActionSheet.addAction((UIAlertAction(title: "Choose from gallery", style: .default, handler: {
+            _ in
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .photoLibrary
+            
+            self.present(self.imagePicker, animated: true, completion: nil)
+        })))
+        cameraActionSheet.addAction((UIAlertAction(title: "Take picture", style: .default, handler: {
+            _ in
+            self.imagePicker.allowsEditing = true
+            self.imagePicker.sourceType = .camera
+            
+            self.present(self.imagePicker, animated: true, completion: nil)
+        })))
+        cameraActionSheet.addAction((UIAlertAction(title: "Cancel", style: .destructive, handler: nil )))
+        present(cameraActionSheet, animated: true, completion: nil)
     }
     
-    @IBAction func takepic() {
-        imagePicker.allowsEditing = true
-        imagePicker.sourceType = .camera
-        
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    @IBAction func editPhoto() {
+    @IBAction func editPhoto(_ sender: UIButton) {
         performSegue(withIdentifier: "edit", sender: "any")
     }
     
-
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -54,7 +57,6 @@ class ViewController: UIViewController ,UIImagePickerControllerDelegate, UINavig
             imageView.image = pickedImage
             
             editButton.isHidden = false
-            editButtonLabel.isHidden = false
         }
         
         dismiss(animated: true, completion: nil)

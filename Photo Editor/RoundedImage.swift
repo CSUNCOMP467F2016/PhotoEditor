@@ -2,7 +2,7 @@
 //  RoundedImage.swift
 //  Photo Editor
 //
-//  Created by Vrezh Gulyan on 11/2/16.
+//  Created by Sevan Gregorian on 11/2/16.
 //  Copyright © 2016 Revenge Apps Inc. All rights reserved.
 //
 
@@ -10,10 +10,11 @@ import CoreGraphics
 import Foundation
 import UIKit
 
-
+//not functional as of yet
 extension UIImage {
     /// Returns a new version of the image with the corners rounded to the specified radius.
     public func imageRounded(withCornerRadius radius: CGFloat, divideRadiusByImageScale: Bool = false) -> UIImage {
+        
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         
         let scaledRadius = divideRadiusByImageScale ? radius / scale : radius
@@ -29,8 +30,11 @@ extension UIImage {
         return roundedImage
     }
     
+    
+    //functional
     /// Returns a new version of the image rounded into a circle.
     public func imageRoundedIntoCircle() -> UIImage {
+        
         let radius = min(size.width, size.height) / 2.0
         var squareImage = self
         

@@ -13,7 +13,7 @@
 		DB07CA271DCB150500A29211 /* FilteredImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB07CA261DCB150500A29211 /* FilteredImage.swift */; };
 		DB07CA291DCB4ADB00A29211 /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB07CA281DCB4ADB00A29211 /* RotateImage.swift */; };
 		DB9CC4F01DB9CF0F00A63A0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9CC4EF1DB9CF0F00A63A0B /* AppDelegate.swift */; };
-		DB9CC4F21DB9CF0F00A63A0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9CC4F11DB9CF0F00A63A0B /* ViewController.swift */; };
+		DB9CC4F21DB9CF0F00A63A0B /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9CC4F11DB9CF0F00A63A0B /* HomeController.swift */; };
 		DB9CC4F51DB9CF0F00A63A0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9CC4F31DB9CF0F00A63A0B /* Main.storyboard */; };
 		DB9CC4F81DB9CF0F00A63A0B /* Photo_Editor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DB9CC4F61DB9CF0F00A63A0B /* Photo_Editor.xcdatamodeld */; };
 		DB9CC4FA1DB9CF0F00A63A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9CC4F91DB9CF0F00A63A0B /* Assets.xcassets */; };
@@ -28,7 +28,7 @@
 		DB07CA281DCB4ADB00A29211 /* RotateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
 		DB9CC4EC1DB9CF0F00A63A0B /* Photo Editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Photo Editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9CC4EF1DB9CF0F00A63A0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB9CC4F11DB9CF0F00A63A0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB9CC4F11DB9CF0F00A63A0B /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		DB9CC4F41DB9CF0F00A63A0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB9CC4F71DB9CF0F00A63A0B /* Photo_Editor.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photo_Editor.xcdatamodel; sourceTree = "<group>"; };
 		DB9CC4F91DB9CF0F00A63A0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB07CA1E1DCACCA300A29211 /* Image */ = {
+		DB07CA1E1DCACCA300A29211 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				DB07CA1F1DCACDCE00A29211 /* ScaleImage.swift */,
@@ -55,16 +55,36 @@
 				DB07CA261DCB150500A29211 /* FilteredImage.swift */,
 				DB07CA281DCB4ADB00A29211 /* RotateImage.swift */,
 			);
-			name = Image;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		DB07CA211DCAD4EF00A29211 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DB9CC4F11DB9CF0F00A63A0B /* ViewController.swift */,
+				DB9CC4F11DB9CF0F00A63A0B /* HomeController.swift */,
 				DB07CA221DCAD51800A29211 /* EditController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		DB07CA2A1DCC2FB000A29211 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DB9CC4F31DB9CF0F00A63A0B /* Main.storyboard */,
+				DB9CC4FB1DB9CF0F00A63A0B /* LaunchScreen.storyboard */,
+				DB9CC4F91DB9CF0F00A63A0B /* Assets.xcassets */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		DB07CA2B1DCC2FD700A29211 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				DB9CC4EF1DB9CF0F00A63A0B /* AppDelegate.swift */,
+				DB9CC4FE1DB9CF0F00A63A0B /* Info.plist */,
+				DB9CC4F61DB9CF0F00A63A0B /* Photo_Editor.xcdatamodeld */,
+			);
+			name = Setup;
 			sourceTree = "<group>";
 		};
 		DB9CC4E31DB9CF0F00A63A0B = {
@@ -86,14 +106,10 @@
 		DB9CC4EE1DB9CF0F00A63A0B /* Photo Editor */ = {
 			isa = PBXGroup;
 			children = (
+				DB07CA1E1DCACCA300A29211 /* Model */,
+				DB07CA2A1DCC2FB000A29211 /* View */,
 				DB07CA211DCAD4EF00A29211 /* Controllers */,
-				DB07CA1E1DCACCA300A29211 /* Image */,
-				DB9CC4EF1DB9CF0F00A63A0B /* AppDelegate.swift */,
-				DB9CC4F31DB9CF0F00A63A0B /* Main.storyboard */,
-				DB9CC4F91DB9CF0F00A63A0B /* Assets.xcassets */,
-				DB9CC4FB1DB9CF0F00A63A0B /* LaunchScreen.storyboard */,
-				DB9CC4FE1DB9CF0F00A63A0B /* Info.plist */,
-				DB9CC4F61DB9CF0F00A63A0B /* Photo_Editor.xcdatamodeld */,
+				DB07CA2B1DCC2FD700A29211 /* Setup */,
 			);
 			path = "Photo Editor";
 			sourceTree = "<group>";
@@ -172,7 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB07CA231DCAD51800A29211 /* EditController.swift in Sources */,
-				DB9CC4F21DB9CF0F00A63A0B /* ViewController.swift in Sources */,
+				DB9CC4F21DB9CF0F00A63A0B /* HomeController.swift in Sources */,
 				DB9CC4F01DB9CF0F00A63A0B /* AppDelegate.swift in Sources */,
 				DB07CA251DCB134C00A29211 /* RoundedImage.swift in Sources */,
 				DB07CA201DCACDCE00A29211 /* ScaleImage.swift in Sources */,

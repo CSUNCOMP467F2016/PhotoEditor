@@ -2,7 +2,7 @@
 //  FilteredImage.swift
 //  Photo Editor
 //
-//  Created by Vrezh Gulyan on 11/2/16.
+//  Created by Khajag Basmajian on 11/2/16.
 //  Copyright © 2016 Revenge Apps Inc. All rights reserved.
 //
 
@@ -32,5 +32,86 @@ extension UIImage {
         let cgImageRef = context.createCGImage(outputImage, from: outputImage.extent)
         
         return UIImage(cgImage: cgImageRef!, scale: scale, orientation: imageOrientation)
+    }
+    
+    public func colorFilter(image : UIImage, color : String) -> UIImage {
+        var newImage = image
+        
+        let blueKernelString =
+            "kernel vec4 chromaKey( __sample s) { \n" +
+                "  vec4 newPixel = s.rgba;" +
+                "  newPixel[0] = 0.0;" +
+                "  newPixel[2] = newPixel[2] / 1.5;" +
+                "  return newPixel;\n" +
+        "}"
+        let pinkKernelString =
+            "kernel vec4 chromaKey( __sample s) { \n" +
+                "  vec4 newPixel = s.rgba;" +
+                "  newPixel[0] = newPixel[0] / 1.5;" +
+                "  newPixel[1] = 0.0;" +
+                "  newPixel[2] = newPixel[2] / 1.5;" +
+                "  return newPixel;\n" +
+        "}"
+        let yellowKernelString =
+            "kernel vec4 chromaKey( __sample s) { \n" +
+                "  vec4 newPixel = s.rgba;" +
+                "  newPixel[0] = newPixel[0] / 1.5;" +
+                "  newPixel[1] = newPixel[1] / 1.5;" +
+                "  newPixel[2] = 0.0;" +
+                "  return newPixel;\n" +
+        "}"
+        let redKernelString =
+            "kernel vec4 chromaKey( __sample s) { \n" +
+                "  vec4 newPixel = s.rgba;" +
+                "  newPixel[0] = newPixel[0] / 1.5;" +
+                "  newPixel[1] = 0.0;" +
+                "  newPixel[2] = 0.0;" +
+                "  return newPixel;\n" +
+        "}"
+        let greenKernelString =
+            "kernel vec4 chromaKey( __sample s) { \n" +
+                "  vec4 newPixel = s.rgba;" +
+                "  newPixel[0] = 0.0;" +
+                "  newPixel[1] = newPixel[1] / 1.5;" +
+                "  newPixel[2] = 0.0;" +
+                "  return newPixel;\n" +
+        "}"
+        func createCustomKernel(color: String) -> CIColorKernel {
+            var kernel = ""
+            switch(color) {
+            case "red":
+                kernel = redKernelString
+                break
+            case "blue":
+                kernel = blueKernelString
+                break
+            case "green":
+                kernel = greenKernelString
+                break
+            case "yellow":
+                kernel = yellowKernelString
+                break
+            case "pink":
+                kernel = pinkKernelString
+                break
+            default:
+                kernel = redKernelString
+                break
+            }
+
+            return CIColorKernel(string: kernel)!
+        }
+        
+        if let ciImage =  CIImage(image: image) {
+            let args = [ciImage as AnyObject]
+            if let outputImage = createCustomKernel(color: color).apply(withExtent: ciImage.extent, arguments: args) {
+                let context = CIContext(options: [kCIContextPriorityRequestLow: true])
+                if let cgImageRef = context.createCGImage(outputImage, from: outputImage.extent){
+                    newImage =  UIImage(cgImage: cgImageRef)
+                }
+            }
+        }
+        
+        return newImage
     }
 }

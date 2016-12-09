@@ -27,6 +27,7 @@ extension UIImage {
     /// Returns a new version of the image scaled from the center while maintaining the aspect ratio to fit within
     /// a specified size.
     public func imageAspectScaled(toFit size: CGSize) -> UIImage {
+        
         let imageAspectRatio = self.size.width / self.size.height
         let canvasAspectRatio = size.width / size.height
         
@@ -52,6 +53,7 @@ extension UIImage {
     
     /// Returns a new version of the image scaled from the center while maintaining the aspect ratio to fill a
     public func imageAspectScaled(toFill size: CGSize) -> UIImage {
+        
         let imageAspectRatio = self.size.width / self.size.height
         let canvasAspectRatio = size.width / size.height
         

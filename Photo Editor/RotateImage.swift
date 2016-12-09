@@ -2,7 +2,7 @@
 //  RotateImage.swift
 //  Photo Editor
 //
-//  Created by Vrezh Gulyan on 11/3/16.
+//  Created by Khajag Basmajian on 11/3/16.
 //  Copyright © 2016 Revenge Apps Inc. All rights reserved.
 //
 
